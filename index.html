@@ -12,25 +12,298 @@
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
-        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+          <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
     </head>
     <body>
-        <!--[if lte IE 9]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <style type="text/css">
+        ul {
+            list-style-type: none;
+        }
+        </style>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
-        <script src="https://code.jquery.com/jquery-{{JQUERY_VERSION}}.min.js" integrity="{{JQUERY_SRI_HASH}}" crossorigin="anonymous"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-{{JQUERY_VERSION}}.min.js"><\/script>')</script>
+        <br><br>
+        <div class="container">
+            <table class="table table-responsive table-bordered" style="background-color:#f5f5f5">
+                <thead>
+                    <tr>
+                        <th colspan=4>Opportunity Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Opportunity Name<sup>*</sup></td>
+                        <td><input type="text"></td>
+                        <td>Solicitation/ RTEP #</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>Amount</td>
+                        <td><input type="text"></td>
+                        <td>Type</td>
+                        <td>
+                            <select>
+                                <option value="Existing Business">Existing Business</option>
+                                <option value="New Business">New Business</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Opportunity Description</td>
+                        <td><textarea rows="4"></textarea></td>
+                        <td>Vehicle<sup>*</sup></td>
+                        <td>
+                            <select>
+                                <option value="FBO">FBO</option>
+                                <option value="CIO-SP3">CIO-SP3</option>
+                                <option value="SeaPort-e">SeaPort-e</option>
+                                <option value="eBuy">eBuy</option>
+                                <option value="IT70">IT70</option>
+                                <option value="OASIS">OASIS</option>
+                                <option value="HHS Vehicle">HHS Vehicle</option>
+                                <option value="MOBIS (PSS)">MOBIS (PSS)</option>
+                                <option value="Schedule 874 (PSS 00CORP)">Schedule 874 (PSS 00CORP)</option>
+                                <option value="STARS II">STARS II</option>
+                                <option value="STASER">TASER</option>
+                                <option value="VETS">VETS</option>
+                                <option value="N/A">N/A</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Expected Close Date<sup>*</sup></td>
+                        <td><input type="text" id="datepicker"></td>
+                        <td>Lead Source</td>
+                        <td>
+                            <select>
+                                <option value="FBO">Cold Call</option>
+                                <option value="CIO-SP3">Existing Customer</option>
+                                <option value="SeaPort-e">Self Generated</option>
+                                <option value="eBuy">Employee</option>
+                                <option value="IT70">Other</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Assigned To</td>
+                        <td>
+                            <select>
+                                <option value="Users">Users - select individual users</option>
+                                <option value="Groups">Groups - select groups</option>
+                            </select>
+                        </td>
+                        <td>Opportunity Phases<sup>*</sup></td>
+                        <td>display stage name based on parameters</td>
+                    </tr>
+                    <tr>
+                        <td>Strategic Alignment</td>
+                        <td><input type="text"></td>
+                        <td>Role<sup>*</sup></td>
+                        <td>
+                            <select>
+                                <option value="Sub">Sub</option>
+                                <option value="Prime">Prime</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Competitive Procedure<sup>*</sup></td>
+                        <td><input type="text"></td>
+                        <td>Capture Notes/Actions</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>Team Leads<sup>*</sup></td>
+                        <td>
+                            <ul>
+                                <li>
+                                    BD Lead&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <select>
+                                        <option value="List of FTC Contacts">List of FTC Contacts</option>
+                                    </select>
+                                </li>
+                                <li>
+                                    Capture Lead
+                                    <select>
+                                        <option value="List of FTC Contacts">List of FTC Contacts</option>
+                                    </select>
+                                </li>
+                                <li>
+                                    Solution Lead
+                                    <select>
+                                        <option value="List of FTC Contacts">List of FTC Contacts</option>
+                                    </select>
+                                </li>
+                                <li>
+                                    Proposal Lead
+                                    <select>
+                                        <option value="List of FTC Contacts">List of FTC Contacts</option>
+                                    </select>
+                                </li>
+                            </ul>
+                        </td>
+                        <td>Teaming</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>Fully Executed TA's & NDA's</td>
+                        <td><input type="text"></td>
+                        <td>Qualified PSEF Submissions and Score</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>Submitted PSEF</td>
+                        <td><input type="text"></td>
+                        <td>Customer (Office & Agency)<sup>*</sup></td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>Number of Awards</td>
+                        <td><input type="text"></td>
+                        <td>Period of Performance</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>Place of Performance</td>
+                        <td><input type="text"></td>
+                        <td>RFP/RTEP Status</td>
+                        <td>
+                            <select>
+                                <option>RFI/SS Notice</option>
+                                <option>Draft RTEP</option>
+                                <option>Issued</option>
+                                <option>Pipeline</option>
+                                <option>Awarded</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Pre-Sol./RFI Response</td>
+                        <td>
+                            <select>
+                                <option>Yes</option>
+                                <option>No</option>
+                                <option>TBD</option>
+                            </select>
+                        </td>
+                        <td>Pre-Sol./RFI Due Date</td>
+                        <td><input type="text" id="datepicker2"></td>
+                    </tr>
+                    <tr>
+                        <td>RFP/RTEP Release</td>
+                        <td><input type="text" id="datepicker3"></td>
+                        <td>RFP/RTEP Due Date</td>
+                        <td><input type="text" id="datepicker4"></td>
+                    </tr>
+                    <tr>
+                        <td>Award Date</td>
+                        <td><input type="text" id="datepicker5"></td>
+                        <td>NAICS Code<sup>*</sup></td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>Previous RFP/RTEP</td>
+                        <td>
+                            <select>
+                                <option>N/A</option>
+                                <option>No</option>
+                                <option>Expiring</option>
+                                <option>Recompete</option>
+                            </select>
+                        </td>
+                        <td>Incumbent</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>Incumbent Communication Status</td>
+                        <td>
+                            <select>
+                                <option>Yes</option>
+                                <option>Active Reach Out</option>
+                                <option>No Reach Out</option>
+                                <option>Negotiation</option>
+                                <option>Teamed</option>
+                            </select>
+                        </td>
+                        <td>Incumbent</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>TCV(Previous Contract)</td>
+                        <td><input type="text"></td>
+                        <td>Obligated Value</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>Incumbent Contract End Date</td>
+                        <td><input type="text" id="datepicker6"></td>
+                        <td>Weblinks</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>No Bid Rational (For Closed - No Bid phase)</td>
+                        <td><input type="text"></td>
+                        <td>Evaluation (Debrief - Tech Rating, For Evaluation Phase)</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>Campaign Source</td>
+                        <td><input type="text"></td>
+                        <td>Probability</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>Forecast Amount</td>
+                        <td><input type="text"></td>
+                        <td>Description Details</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>Primary Phone</td>
+                        <td><input type="text"></td>
+                        <td>Contact Name</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>Proposal Pink Team Review Date (For Proposal Phase)</td>
+                        <td><input type="text" id="datepicker7"></td>
+                        <td>#Proposal Red Team Review Date (For Proposal Phase)</td>
+                        <td><input type="text" id="datepicker8"></td>
+                    </tr>
+                    <tr>
+                        <td>Proposal Gold Team Review Date (For Proposal Phase)</td>
+                        <td><input type="text" id="datepicker9"></td>
+                        <td>#Proposal Final Team Review Date (For Proposal Phase)</td>
+                        <td><input type="text" id="datepicker10"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
 
-        <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
         <script>
-            window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
-            ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
+            $( function() {
+            $( "#datepicker" ).datepicker();
+            $( "#datepicker2" ).datepicker();
+            $( "#datepicker3" ).datepicker();
+            $( "#datepicker4" ).datepicker();
+            $( "#datepicker5" ).datepicker();
+            $( "#datepicker6" ).datepicker();
+            $( "#datepicker7" ).datepicker();
+            $( "#datepicker8" ).datepicker();
+            $( "#datepicker9" ).datepicker();
+            $( "#datepicker10" ).datepicker();
+
+            } );
         </script>
-        <script src="https://www.google-analytics.com/analytics.js" async defer></script>
     </body>
 </html>
