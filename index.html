@@ -9,8 +9,6 @@
 
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
-
-        <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
           <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -28,6 +26,24 @@
 
         <!-- Add your site or application content here -->
         <br><br>
+        <div class="continer">
+            <div class="alert alert-info">
+                <strong>Info!</strong> Change stages to reflect the changes
+                <select id="phasesList">
+                    <option value="Precheck">Precheck</option>
+                    <option value="Identification">Identification</option>
+                    <option value="Quallification">Quallification</option>
+                    <option value="Pre proposal">Pre proposal</option>
+                    <option value="Proposal">Proposal</option>
+                    <option value="Evaluation">Evaluation</option>
+                    <option value="Closed - No Bid">Closed - No Bid</option>
+                    <option value="Closed - won">Closed - Won</option>
+                    <option value="Closed - Loss">Closed - Loss</option>
+                    <option value="Closed - Cancelled">Closed - Cancelled</option>
+                    <option value="Closed - qualified">Closed - Not qualified</option>
+                </select>
+            </div>
+        </div>
         <div class="container">
             <table class="table table-responsive table-bordered" style="background-color:#f5f5f5">
                 <thead>
@@ -98,7 +114,7 @@
                             </select>
                         </td>
                         <td>Opportunity Phases<sup>*</sup></td>
-                        <td>display stage name based on parameters</td>
+                        <td><input type="text" id="phases" disabled></td>
                     </tr>
                     <tr>
                         <td>Strategic Alignment</td>
